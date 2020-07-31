@@ -24,20 +24,25 @@ class Welcome extends CI_Controller {
 		// $salary = $this->input->post("salary");
 		//$data = json_decode(file_get_contents("php://input"));
 		//print_r($data);exit;
-		if($this->input->raw_input_stream)
-		{
-			echo "ok";
-			$input_data = json_decode($this->input->raw_input_stream, true);
-			print_r($input_data);exit;
-		}
-		elseif($this->input->post()){
-			$data = $this->input->post();
-			print_r($data); exit;
-		}
-		else{
-			echo "nono";exit;
-		}
-		$this->load->model("sample");
-		$this->sample->sampl($data);
+		// if($this->input->raw_input_stream)
+		// {
+		// 	echo "ok";
+		// 	$input_data = json_decode($this->input->raw_input_stream, true);
+		// 	print_r($input_data);exit;
+		// }
+		// elseif($this->input->post()){
+		// 	$data = $this->input->post();
+		// 	print_r($data); exit;
+		// }
+		// else{
+		// 	echo "nono";exit;
+		// }
+		// $this->load->model("sample");
+		// $this->sample->sampl($data);
+		$this->load->view('welcome_message');
+	}
+
+	public function test(){
+		echo "HI";
 	}
 }
